@@ -1,7 +1,6 @@
 //! High level astronomical data library
 //! Initially translated from [suncalc.js](http://github.com/mourner/suncalc).
 //! Moon phase art by [Joan Stark](https://en.wikipedia.org/wiki/Joan_Stark)
-#![feature(use_extern_macros)]
 #![allow(non_snake_case)]
 #[macro_use]
 extern crate assert_approx_eq;

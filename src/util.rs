@@ -61,7 +61,7 @@ pub fn helio_frm_geo(julian_day: f64, geo_coords: CartesianCoordinates) -> Carte
 pub fn ecl_frm_cart(x: f64, y: f64, z: f64) -> EclCoordinates {
     let r = (x * x + y * y + z * z).sqrt();
     let mut ra = (y).atan2(x);
-    ra = if ra >= 0.0 { ra } else { (2.0 * PI + ra) };
+    ra = if ra >= 0.0 { ra } else { 2.0 * PI + ra };
     let dec = (z / r).asin();
     return EclCoordinates {
         lat: dec,
@@ -73,7 +73,7 @@ pub fn eq_frm_cart(cart_coords: CartesianCoordinates) -> EqCoordinates {
     let (x, y, z) = (cart_coords.x, cart_coords.y, cart_coords.z);
     let r = (x * x + y * y + z * z).sqrt();
     let mut ra = (y).atan2(x);
-    ra = if ra >= 0.0 { ra } else { (2.0 * PI + ra) };
+    ra = if ra >= 0.0 { ra } else { 2.0 * PI + ra };
     let dec = (z / r).asin();
     // let ra=(r).atan2(z);
     // let dec=(y).atan2(x);
